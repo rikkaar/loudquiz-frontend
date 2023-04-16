@@ -5,6 +5,18 @@ export default class AuthService {
         return $api.get('/room/findRoom')
     }
 
+    static async changeComplicity(room, state) {
+        return $api.get(`/room/${room}/complicity/${state}`)
+    }
+
+    static async changeExperimental(room, state) {
+        return $api.get(`/room/${room}/experimental/${state}`)
+    }
+
+    static async changeLoudQuiz(room, state) {
+        return $api.get(`/room/${room}/loud_quiz/${state}`)
+    }
+
     static async deleteRoom(){
         return $api.delete(`/room/`)
     }

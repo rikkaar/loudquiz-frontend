@@ -8,7 +8,6 @@ import returnIcon from "../assets/return.png";
 
 const Register = () => {
     const name = useRef(null)
-    const create = useRef(null)
     const navigate = useNavigate()
     const userStore = useQuizStore((state) => state.user)
     const setUserName = useQuizStore((state) => state.setUserName)
@@ -38,11 +37,11 @@ const Register = () => {
     }
 
     return (
-        <div className={"flex flex-col gap-2 text-center"}>
+        <div className={"flex flex-col gap-2 text-center p-3"}>
             <Link to={'/room'} className={'absolute top-12 right-12'}>
                 <img src={returnIcon} alt="" className={'w-6 h-6'}/>
             </Link>
-            <span>Текущее имя: {userStore.name}</span>
+            <span className={"break-words max-w-[350px] sm:max-w-full"}>Текущее имя: {userStore.name}</span>
             <input
                 type="text"
                 placeholder={"Введите новое имя"}
@@ -50,7 +49,6 @@ const Register = () => {
                 ref={name}
             />
             <button
-                ref={create}
                 className={"p-2 bg-slate-500 rounded-lg text-white focus:drop-shadow-lg lowercase"}
                 onClick={e => createHandler(name.current.value)}
             >Изменить имя
