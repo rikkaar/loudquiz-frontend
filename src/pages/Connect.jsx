@@ -38,6 +38,11 @@ const Connect = () => {
         if (!code) {
             return toast.error("Поле пустое!")
         }
+
+        if (isNaN(code) || code.length > 5){
+            return toast.error("Неверный код подключения")
+        }
+
         try {
             const room = await RoomService.getRoomByCode(code)
             if (!room.data) {

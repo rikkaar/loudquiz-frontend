@@ -1,8 +1,3 @@
-const all = 0
-const easy = 1
-const normal = 2
-const hard = 3
-
 export default function ComplicityToStr(code) {
     switch (code) {
         case 0:
@@ -14,7 +9,6 @@ export default function ComplicityToStr(code) {
         case 3:
             return "Сложные"
         default:
-            return "idk"
-
+            return "Что-то ты нахуевертил"
     }
 }
